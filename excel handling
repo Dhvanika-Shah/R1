@@ -1,0 +1,14 @@
+import pandas as pd
+df=pd.read_excel("DfPractice.xlsx")
+df.fillna(0,inplace=True)
+df["Amount"]=df["p_price"]*df["unit_purchased"]
+df.drop_duplicates("Pur_id", inplace=True)
+grpDf=df.groupby("supid")["Amount"].sum()
+#print(grpDf)
+
+
+df1=pd.read_excel("concat practice.xlsx")
+df2=pd.read_excel("concat practice.xlsx",sheet_name="Sheet2")
+
+df3=pd.concat([df1,df2],axis=0)
+print(df3)
