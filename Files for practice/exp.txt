@@ -1,0 +1,4 @@
+Travel 10000
+Rent   5000
+Medical  7000
+Other  3000

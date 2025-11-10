@@ -1,0 +1,166 @@
+#seasonal decompose
+
+import pandas as pd
+from statsmodels.tsa.seasonal import seasonal_decompose
+import numpy as np
+import matplotlib.pyplot as plt
+from statsmodels.graphics.tsaplots import plot_acf,plot_pacf
+df1 = pd.DataFrame(index=pd.date_range('2015-01-01', end='2024-03-01', freq='MS'),
+         data = {'rev' : np.random.randint(10, high = 1000, size = len(pd.date_range('2015-01-01', end='2024-03-01', freq='MS')))})
+
+seasonal_decompose(df1).plot()
+plt.show()
+
+#acf
+plot_acf(df1)
+plt.title("ACF Plot")
+plt.show()
+
+#pacf
+plot_pacf(df1)
+plt.title("PACF Plot")
+plt.show()
+
+
+#dual axis
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_excel("tips.xlsx",sheet_name="Sheet2")
+ax=df.plot(kind="line",x="Name",
+           y="Height",color="red",linewidth=3
+           )
+
+ax2=df.plot(kind="line",x="Name",
+           y="Weight",secondary_y=True,
+           color="blue",linewidth=3,
+           ax=ax)
+plt.title("Student Data")
+ax.set_xlabel("Name",color="g")
+ax.set_ylabel("Height",color="r")
+ax2.set_ylabel("Weight",color="b")
+plt.tight_layout()
+plt.show()
+
+
+#parato chart
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from matplotlib.ticker import PercentFormatter
+
+df = pd.DataFrame({'count': [97, 140, 58, 6, 17, 32]})
+df.index = ['Bad quality', 'mis behave', 'no response', 'after sale service', 'delay', 'other problems']
+
+df = df.sort_values(by='count', ascending=False)
+
+#add column to display cumulative percentage
+df['cumperc'] = df['count'].cumsum()/df['count'].sum()*100
+
+color1 = 'steelblue'
+color2 = 'red'
+line_size = 4
+
+
+fig, ax = plt.subplots()
+ax.bar(df.index, df['count'], color=color1)
+
+
+ax2 = ax.twinx()
+ax2.plot(df.index, df['cumperc'], color=color2, marker="D", ms=line_size)
+ax2.yaxis.set_major_formatter(PercentFormatter())
+
+
+ax.tick_params(axis='y', colors=color1)
+ax2.tick_params(axis='y', colors=color2)
+
+
+plt.show()
+
+
+
+
+#Heatmap
+#Heatmap
+df_train=pd.read_csv("train_energy_data.csv")
+
+df = pd.concat([df_train, df_test], ignore_index=True)
+#print(df.describe())
+
+
+
+
+building_rank = {"Industrial": 3, "Commercial": 2, "Residential": 1}
+df["Building_Encoded"] = df["Building Type"].map(building_rank)
+
+df.drop("Day of Week", axis=1, inplace=True)
+
+
+
+corr_df = df.drop(["Building Type"], axis=1).corr()
+plt.figure(figsize=(10, 6))
+sns.heatmap(corr_df, cmap="coolwarm", annot=True,fmt=".2f")
+plt.title("Corelation")
+plt.show()
+
+
+#waterfall chart
+
+import plotly.graph_objects as go
+import pandas as pd
+df=pd.read_excel("charts.xlsx")
+fig=go.Figure(go.Waterfall(
+    x=[df["years"],
+       df["qtr"]],
+    measure=df["type"],
+    y=df["value"],base=300,
+    decreasing={"marker":{"color":"red","line":{"color":"red","width":2}}},
+    increasing={"marker":{"color":"green"}},
+    totals={"marker":{"color":"deep sky blue","line":{"color":"blue","width":3}}}
+    ))
+fig.update_layout(title="P & L",waterfallgap=0.3)
+fig.show()
+
+
+#pair plot
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+df=pd.read_excel("tips.xlsx")
+sns.pairplot(df,hue="gender")
+plt.show()
+
+
+#sunburst chart 
+
+import plotly.express as px
+import pandas as pd
+#df = px.data.tips()
+df=pd.read_excel("tips.xlsx")
+fig = px.sunburst(df, path=['day', 'time', 'gender'], values='total_bill')
+fig.show()
+
+
+#Histogram
+
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_excel("tips.xlsx")
+
+plt.hist(df["total_bill"],bins=5)
+plt.show()
+
+
+#boxplot
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+df=pd.read_excel("tips.xlsx")
+
+plt.figure(figsize=(6,3.5))
+plt.boxplot(df["total_bill"],vert=False)
+plt.show()
+
+

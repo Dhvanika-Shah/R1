@@ -1,0 +1,60 @@
+# Standardization and Normalizatio
+from sklearn.preprocessing import MinMaxScaler,StandardScaler
+import numpy as np
+data=np.array([0,1,2,33,4,43,86,7,8,9])
+data=data.reshape(-1,1)
+#normalize data
+mmc =MinMaxScaler()
+nd=mmc.fit_transform(data)
+#standardize data
+sc=StandardScaler()
+sd=sc.fit_transform(data)
+print("standardize data")
+print(sd)
+print("normalize data")
+print(nd)
+
+
+
+#Label encoding and onehot encoding
+import pandas as pd
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+#generation of data
+lst=["india","india","usa","india","canada","canada","usa"]
+df=pd.DataFrame({"country":lst})
+#one hot encoding
+OHE=OneHotEncoder()
+en_data=OHE.fit_transform(df)
+print(en_data)
+#normal encoding
+dt=pd.get_dummies(df["country"])
+print(dt)
+#label encoding
+le=LabelEncoder()
+el=le.fit_transform(df["country"])
+print(el)
+
+
+#Agewise category
+import pandas as pd
+import numpy as np
+
+age=[5,32,76,3,25,14,55,11,54,32,21,10]
+df=pd.DataFrame(age,columns=["age"])
+df1=pd.cut(df["age"],bins=[0,18,35,60,np.inf],
+           labels=["child","Young","adult","senior"])
+print(df1)
+
+
+
+#Binning using category
+
+from sklearn.preprocessing import KBinsDiscretizer
+import numpy as np
+X = np.array([5,32,76,3,25,14,55,11,54,32,21,10]).reshape(-1,1)
+
+binning=KBinsDiscretizer(n_bins=3,encode="ordinal",strategy="uniform")
+binned_data=binning.fit_transform(X)
+print(binned_data)
+
+
