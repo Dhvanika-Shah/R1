@@ -1,0 +1,236 @@
+[#Menu:Gateway of Tally]
+	Add:Button:ExploreBTN
+	
+[Button:ExploreBTN]
+	Title:"Line Color"
+	Action:Alter:LineColor
+	Key:Ctrl + C
+
+[#Line:DSP Accline]
+	Add:Option:EBYCRed:##Col = "Red"
+	Add:Option:EBYCBlue:##Col = "Blue"
+	Add:Option:EBYCYellow:##Col = "Yellow"
+	Add:Option:EBYCGreen:##Col = "Green"
+	Add:Option:EBYCMagenta:##Col = "Magenta"
+	Add:Option:EBYCDeepPink:##Col = "Deep Pink"
+	Add:Option:EBYCLeafGreen:##Col = "Leaf Green"
+	Add:Option:EBYCGold:##Col = "Gold"
+	Add:Option:EBYCNoLn:##Col = "No Line"
+	
+	
+
+[#Line:DSP VchDetail]
+	Add:Option:EBYCRed:##Col = "Red"
+	Add:Option:EBYCBlue:##Col = "Blue"
+	Add:Option:EBYCYellow:##Col = "Yellow"
+	Add:Option:EBYCGreen:##Col = "Green"
+	Add:Option:EBYCMagenta:##Col = "Magenta"
+	Add:Option:EBYCDeepPink:##Col = "Deep Pink"
+	Add:Option:EBYCLeafGreen:##Col = "Leaf Green"
+	Add:Option:EBYCGold:##Col = "Gold"
+	Add:Option:EBYCNoLn:##Col = "No Line"
+	
+
+	
+[#Line: BSDetail]
+	Add:Option:EBYCRed:##Col = "Red"
+	Add:Option:EBYCBlue:##Col = "Blue"
+	Add:Option:EBYCYellow:##Col = "Yellow"
+	Add:Option:EBYCGreen:##Col = "Green"
+	Add:Option:EBYCMagenta:##Col = "Magenta"
+	Add:Option:EBYCDeepPink:##Col = "Deep Pink"
+	Add:Option:EBYCLeafGreen:##Col = "Leaf Green"
+	Add:Option:EBYCGold:##Col = "Gold"
+	Add:Option:EBYCNoLn:##Col = "No Line"
+	
+		
+[#Line: PLDetail]
+	Add:Option:EBYCRed:##Col = "Red"
+	Add:Option:EBYCBlue:##Col = "Blue"
+	Add:Option:EBYCYellow:##Col = "Yellow"
+	Add:Option:EBYCGreen:##Col = "Green"
+	Add:Option:EBYCMagenta:##Col = "Magenta"
+	Add:Option:EBYCDeepPink:##Col = "Deep Pink"
+	Add:Option:EBYCLeafGreen:##Col = "Leaf Green"
+	Add:Option:EBYCGold:##Col = "Gold"
+	Add:Option:EBYCNoLn:##Col = "No Line"
+	
+	
+[!Line:EBYCRed]
+	Border:EBYCRedBorder
+	
+[!Line:EBYCBlue]
+	Border:EBYCBlueBorder
+	
+[!Line:EBYCYellow]
+	Border:EBYCYellowBorder
+	
+[!Line:EBYCGreen]
+	Border:EBYCGreenBorder
+	
+[!Line:EBYCMagenta]
+	Border:EBYCMagentaBorder
+	
+[!Line:EBYCDeepPink]
+	Border:EBYCPinkBorder
+	
+[!Line:EBYCLeafGreen]
+	Border:EBYCLGBorder
+	
+[!Line:EBYCGold]
+	Border:EBYCGoldBorder
+	
+[!Line:EBYCNoLn]
+	Delete:Border
+	
+[Border:EBYCRedBorder]
+	Bottom:Thick
+	Color:"Red, Red"
+	
+[Border:EBYCBlueBorder]
+	Bottom:Thick
+	Color:"Blue, Blue"
+	
+[Border:EBYCYellowBorder]
+	Bottom:Thick
+	Color:"Yellow, Yellow"
+	
+[Border:EBYCGreenBorder]
+	Bottom:Thick
+	Color:"Green, Green"
+	
+[Border:EBYCMagentaBorder]
+	Bottom:Thick
+	Color:"Magenta, Magenta"
+	
+[Border:EBYCPinkBorder]
+	Bottom:Thick
+	Color:"Deep Pink"
+	
+[Border:EBYCLGBorder]
+	Bottom:Thick
+	Color:"Leaf Green"
+	
+[Border:EBYCGoldBorder]
+	Bottom:Thick
+	Color:"Gold"
+	
+[#Line: EXPINV InvDetails]
+Border:Thin Bottom
+
+[#Line: EXPSMP InvDetails]
+Border:Thin Bottom
+
+[#Line: EXPSMP BATCHNAME]
+Border:Thin Bottom
+
+[#Line: EXPINV BATCHNAME]
+Border:Thin Bottom 
+
+	
+[System:Variables]
+	Col:"Red"
+	
+[Variable:Col]
+	Type:String
+	Persistent:Yes
+	
+[Report:LineColor]
+	Form:LnFrm
+		
+[Form:LnFrm]
+	Height:35% Screen
+	Width:35% Screen
+	Background:"Azure"
+	Part:LnPrt
+	Bottom Part:EBYCtrtPrt
+	No Confirmation:Yes
+	Vertical Alignment:Bottom
+	Horizontal Alignment:Left
+						
+[Part:LnPrt]
+	Space Bottom:2
+	Line:LnMain, LnLn
+	
+[Line:LnMain]
+	Space Bottom:1.5
+	Field:LnMainFld
+	
+[Field:LNMainFld]
+	Use:Name Field
+	Set as:"Select colors of Grid Lines"
+	Full Width:Yes
+	Align:Center
+	Style:Normal Bold
+	Color:"Blue"
+	Border:EBYCPinkBorder
+	Read Only:Yes
+	Skip:Yes
+	
+[Line:LnLn]
+	Field:Medium Prompt, LnFld
+	Local:Field:Medium Prompt:Set as:"Color of your choice"
+	Local:Field:Medium Prompt:Color:"Blue"
+	
+[Field:LnFld]
+	Type:String
+	Width:@@NameWidth
+	Table:LineColorTable
+	Show Table:Always
+	Modifies:Col
+	Color:"Blue"
+	
+[Part:EBYCtrtPrt]
+	Line:Author, CopyLn
+	
+[Line:Author]
+	Field:AuthFld
+	Space Bottom:1
+	
+[Field:AuthFld]
+	Use:Name Field
+	Set as:"TDL Developed by ExploreBusy" 
+	Full Width:Yes
+	Align:Center
+	Color:"Red"
+	Style:EBYCtl
+	Read Only:Yes
+	Skip:Yes
+	
+[Line:CopyLn]
+	Field:CopyFld
+		
+[Field:CopyFld]
+	Use:Name Field
+	Set as:"[© ExploreBusy 2018]" 
+	Full Width:Yes
+	Align:Center
+	Color:"Red"
+	Style:EBYCt2
+	Border:Thin Bottom
+	Read Only:Yes
+	Skip:Yes
+	
+[Style:EBYCtl]
+	Font:"Calibri (Body)"
+	Height:10
+	Italic:Yes
+	
+[Style:EBYCt2]
+	Font:"Calibri (Body)"
+	Height:9
+	Italic:Yes
+		
+[Collection:LineColorTable]
+	Title:"Color Options"
+	List:"Red", "Green", "Blue", "Yellow", "Magenta", "Deep Pink", "Leaf Green", "Gold", "No Line"
+	
+[Color:Azure]
+	RGB:240, 255, 255
+		
+[Color:Deep Pink]
+	RGB:255, 0, 255
+	
+[Color:Gold]
+	RGB:255, 215, 0
+	
