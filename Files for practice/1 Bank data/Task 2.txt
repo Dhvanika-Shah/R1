@@ -1,0 +1,8 @@
+1 Find out records with withdrawal more 
+	than sanction limit and save it in excel
+2 Find out only record which are 
+	NPA and save it in different excel file
+3 generate Excel files for each report
+
+
+ACCTNO	ACCTDESC CUSTNAME LIMIT	DP ACCTBAL SMA_CODE 
