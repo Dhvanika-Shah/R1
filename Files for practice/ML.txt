@@ -73,7 +73,7 @@ logr = linear_model.LogisticRegression()
 logr.fit(X,y)
 
 
-#predict if tumor is cancerous where the size is 3.46mm:
+#predict if tumor is cancerous
 size=float(input("Enter Tumor Size:"))
 predicted = logr.predict(np.array(size).reshape(-1,1))
 print(predicted)
@@ -98,4 +98,5 @@ lb=q1-1.5*iqr
 ub=q3+1.5*iqr
 outliers=X[(X<lb) | (X>ub)]
 print(outliers)
+
 
