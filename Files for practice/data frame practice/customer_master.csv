@@ -1,0 +1,11 @@
+Customer_ID,Customer_Name,City,KYC_Status
+C001,Raj Sharma,Mumbai,Completed
+C002,Anita Verma,Delhi,Completed
+C003,Suresh Patel,Ahmedabad,Pending
+C004,Priya Iyer,Chennai,Completed
+C005,Rohit Gupta,Pune,Completed
+C006,Meena Singh,Jaipur,Pending
+C007,Arjun Rao,Bangalore,Completed
+C008,Neha Kapoor,Kolkata,Completed
+C009,Vikram Shah,Surat,Completed
+C010,Deepa Nair,Hyderabad,Pending
