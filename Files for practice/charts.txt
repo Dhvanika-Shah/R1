@@ -19,7 +19,7 @@ plt.show()
 #pacf
 plot_pacf(df1)
 plt.title("PACF Plot")
-plt.show()
+plt.Show()
 
 
 #dual axis
@@ -139,7 +139,7 @@ import pandas as pd
 #df = px.data.tips()
 df=pd.read_excel("tips.xlsx")
 fig = px.sunburst(df, path=['day', 'time', 'gender'], values='total_bill')
-fig.show()
+fig.Show()
 
 
 #Histogram
@@ -148,7 +148,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 df=pd.read_excel("tips.xlsx")
 
-plt.hist(df["total_bill"],bins=5)
+plt.Hist(df["total_bill"],bins=5)
 plt.show()
 
 
@@ -162,5 +162,6 @@ df=pd.read_excel("tips.xlsx")
 plt.figure(figsize=(6,3.5))
 plt.boxplot(df["total_bill"],vert=False)
 plt.show()
+
 
 
