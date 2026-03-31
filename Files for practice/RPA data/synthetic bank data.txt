@@ -1,0 +1,11 @@
+1.	ACCTNO	ACCTDESC CUSTNAME ACCTBAL 
+	negative a/c balance
+
+2.	ACCTNO	ACCTDESC CUSTNAME ACCTBAL LIMIT
+	more thane sanctioned limit
+
+3	ACCTNO	ACCTDESC CUSTNAME ACCTBAL SMA_CODE
+	find out NPA
+
+make three different file
+
