@@ -1,0 +1,20 @@
+Do ETL procedure on given files
+
+
+Transforming:
+1 Blank Countries- Other
+2 Blank Category-Other
+3 Blank Numeric Fields-0
+4 Represent Avg.views and subscribers in Million
+5 Represent Avg.likes in Kilo
+
+Make proper dashboard
+Dashboard must contain
+
+
+1 Categorywise no of channels
+2 Top 10 channels having highest subscribers
+3 Countrywise no of subscribers
+4 Categorywise avg views
+5 Categorywise avg likes
+6 Top 5 Category having highest subscribers

@@ -1,0 +1,9 @@
+1 Total number of employees
+2 Total number of employees departmentwise
+3 Total number of employees designationwise
+4 Departmentwise salary paid
+5 Designationwise salary paid
+6 Employeewise tax deducted
+7 Set Employee category
+	employee has <5 leaves A else B
+8 categorywise total number of employees

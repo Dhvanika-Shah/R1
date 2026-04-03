@@ -1,0 +1,3 @@
+Import all files in power bi
+clean and transform data
+make proper dashboard

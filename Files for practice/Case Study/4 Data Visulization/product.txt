@@ -1,0 +1,9 @@
+ProductId	Products
+1	HDD
+2	Xbox
+3	Mobile
+4	Tablet
+5	Antivirus
+6	TV
+7	Laptop
+8	MsOffice

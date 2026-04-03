@@ -1,0 +1,5 @@
+1 Total number of employees
+2 Total number of employees left the company
+3 Total number of employees new to company
+4 Total number of employees transferred 
+5 Total number of employees who have promotions
