@@ -2,7 +2,10 @@
 	than sanction limit and save it in excel
 2 Find out only record which are 
 	NPA and save it in different excel file
-3 generate Excel files for each report
+3 SMA_CODE wise balance
+4 recored with negative balances
+5 generate Excel files for each report
+
 
 
 ACCTNO	ACCTDESC CUSTNAME LIMIT	DP ACCTBAL SMA_CODE 
