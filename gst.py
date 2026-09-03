@@ -16,13 +16,3 @@ driver = webdriver.Chrome(options=chrome_options) # service=service,
 # Open the website
 driver.get(get_site)
 time.sleep(15)
-a=driver.find_element(By.XPATH,"/html/body/div[1]/ng-include/nav/div/div/ul/li[2]/a").click()
-un="abc"
-pw="abc"
-txtun=driver.find_element(By.XPATH,"/html/body/div[2]/div[2]/div/div[2]/div/div/div/div/div/form/div[1]/div/div/input")
-time.sleep(2)
-txtun.send_keys(un)
-txtpw=driver.find_element(By.XPATH,"/html/body/div[2]/div[2]/div/div[2]/div/div/div/div/div/form/div[3]/div/div/input")
-time.sleep(2)
-txtpw.send_keys(pw)
-time.sleep(15)
