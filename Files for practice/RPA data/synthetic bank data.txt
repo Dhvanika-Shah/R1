@@ -2,7 +2,7 @@
 	negative a/c balance
 
 2.	ACCTNO	ACCTDESC CUSTNAME ACCTBAL LIMIT
-	more thane sanctioned limit
+	more than sanctioned limit
 
 3	ACCTNO	ACCTDESC CUSTNAME ACCTBAL SMA_CODE
 	find out NPA
