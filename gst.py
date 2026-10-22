@@ -12,3 +12,7 @@ driver = webdriver.Chrome(options=chrome_options) # service=service,
 # Open the website
 driver.get(get_site)
 time.sleep(15)
+
+
+
+cd appdata\local\programs\python\python315\scripts
